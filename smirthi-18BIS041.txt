@@ -1,10 +1,3 @@
-Round 2 Assessment -TRAKLAB
-
-NAME            : Smirthi C
-College         : Kumaraguru college of technology
-College Roll no : 18bis041
-
-
 Task details: Build an Employee-Department management system, where we should be able to
 do the following things:
 
@@ -12,17 +5,34 @@ do the following things:
 'EmpName', ‘Age' and for Department as 'Id'[DB Generated], ‘DepName' )
 
 Solution :
-CREATE TABLE employees( ID varchar(10),EmpName varchar(40),Age int(3));
-CREATE TABLE department( ID varchar(10),DepName varchar(40));
+CREATE TABLE department( DeptID varchar(10),DepName varchar(40) PRIMARY KEY(DeptID);
 
-INSERT INTO employees VALUES('100','ram',30);
+CREATE TABLE employees( ID varchar(10),EmpName varchar(40),Age int(3));
+
+
+INSERT INTO employees VALUES('100','ram',30); 
 INSERT INTO employees VALUES('101','sam',33);
+INSERT INTO employees VALUES('102','seeta',38);
 INSERT INTO employees VALUES('102','seeta',38);
 
 
 INSERT INTO department VALUES('300','sales');
 INSERT INTO department VALUES('301','sales_check');
 INSERT INTO department VALUES('302','deploy');
+
+2) Link employees to a particular department
+ 
+
+ALTER TABLE employees ADD DeptID varchar(20),FOREIGN KEY(DeptId) REFERENCES department(DeptID);
+
+UPDATE employees SET DeptID = 300 where ID=100;
+UPDATE employees SET DeptID = 301 where ID=101;
+UPDATE employees SET DeptID = 301 where ID=102;
+UPDATE employees SET DeptID = 302 where ID=103;
+
+3) Change the department of any employee
+
+UPDATE employees SET DeptID = 303 where ID=103;
 
 4)Delete an employee and/or department
 
