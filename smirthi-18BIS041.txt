@@ -1,0 +1,33 @@
+Round 2 Assessment -TRAKLAB
+
+NAME            : Smirthi C
+College         : Kumaraguru college of technology
+College Roll no : 18bis041
+
+
+Task details: Build an Employee-Department management system, where we should be able to
+do the following things:
+
+1) Create new employees and departments ( basic fields of Employee as 'Id'[DB generated],
+'EmpName', ‘Age' and for Department as 'Id'[DB Generated], ‘DepName' )
+
+Solution :
+CREATE TABLE employees( ID varchar(10),EmpName varchar(40),Age int(3));
+CREATE TABLE department( ID varchar(10),DepName varchar(40));
+
+INSERT INTO employees VALUES('100','ram',30);
+INSERT INTO employees VALUES('101','sam',33);
+INSERT INTO employees VALUES('102','seeta',38);
+
+
+INSERT INTO department VALUES('300','sales');
+INSERT INTO department VALUES('301','sales_check');
+INSERT INTO department VALUES('302','deploy');
+
+4)Delete an employee and/or department
+
+DELETE From employees WHERE EmpName='ram';
+
+7) Implement searching of data based on any field search
+
+SELECT empName from employees where ID="101";
